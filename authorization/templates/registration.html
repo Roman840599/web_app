@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <h1>Форма регистрации</h1>
+{% endblock title %}
+{% block form %}
+    {{ form.username.label }}
+    {{ form.username }}
+
+    {{ form.email.label }}
+    {{ form.email }}
+
+    {{ form.password1.label }}
+    {{ form.password1 }}
+
+    {{ form.password2.label }}
+    {{ form.password2 }}
+{% endblock form %}
+
+{% block button %}
+    <input type="submit" id="submit" value="Зарегистрироваться">
+{% endblock button %}
+
+{% block href %}
+    <a href="{% url 'login' %}">Войти</a>
+{% endblock href %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <h1>Форма входа</h1>
+{% endblock title %}
+{% block form %}
+    {{ form.username }}
+    {{ form.password }}
+{% endblock form %}
+
+{% block button %}
+    <input type="submit" id="submit" value="ВОЙТИ">
+{% endblock button %}
+
+{% block href %}
+    <a href="{% url 'register' %}">Регистрация</a>
+{% endblock href %}

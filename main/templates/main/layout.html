@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a138db5e0a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet", href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+      <span class="hello-msg">Hello, {{request.user}}</span>
+      <span ><a  class="hello-msg" href="{% url 'logout' %}">Logout</a></span>
+    </nav>
+    <aside>
+        <img src="{% static 'main/img/bg3.jpg' %}" alt="">
+        <span class="logo">Page</span>
+        <h3>Навигация</h3>
+        <ul>
+            <a href="{% url 'home' %}"><li><i class="fas fa-home"></i>Главная</li></a>
+            <a href="{% url 'news_home' %}"><li><i class="fas fa-home"></i>Новости</li></a>
+            <a href="{% url 'about' %}"><li><i class="fas fa-info"></i>Про нас</li></a>
+            <a href=""><li><i class="far fa-address-book"></i>Контакты</li></a>
+            <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i>Добавить новость</button></li></a>
+            <a href="{% url 'chat' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i>Общаться</button></li></a>
+        </ul>
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

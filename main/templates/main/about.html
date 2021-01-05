@@ -1,0 +1,13 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}О нас{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>О нас</h1>
+        <p>The backend developer engineers what is going on behind the scenes. This is where the data is stored,
+            and without this data, there would be no frontend. The backend of the web consists of the server that
+            hosts the website, an application for running it and a database to contain the data.</p>
+        <button class="btn btn-warning"><a href="{% url 'home' %}">На главгую</a></button>
+    </div>
+{% endblock %}
